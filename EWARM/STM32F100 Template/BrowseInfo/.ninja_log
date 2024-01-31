@@ -1,0 +1,87 @@
+# ninja log v5
+75	514	7243680030000000	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.xcl	ddbdc01772040bf2
+519	723	7243680039627518	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	417fdb2accd03f8f
+33	487	7243680030000000	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.xcl	f88791e48facfa13
+77	508	7243680030000000	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/TIM2_100RB.xcl	d7ecf5b5a97a2b62
+72	538	7243680030000000	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/Display_mini.xcl	73a3a9fc4f8b4a62
+0	72	7243680101139371	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/TIM2_100RB.pbi	86183f185f41b5c6
+490	721	7243680039607506	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+541	725	7243680039687572	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/Display_mini.pbi	66f9e951c01f478
+74	146	7243680101879979	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+149	908	7243680109191493	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+0	73	7243680713836688	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	417fdb2accd03f8f
+75	148	7243680714587305	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+152	998	7243680722754627	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+25	98	7252332726332197	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	417fdb2accd03f8f
+21	101	7252332726332197	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/Display_mini.pbi	66f9e951c01f478
+1	103	7252332726322187	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/TIM2_100RB.pbi	86183f185f41b5c6
+23	105	7252332726322187	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+107	225	7252332727609598	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+229	1116	7252332736190717	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+1	69	7252334144821135	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/TIM2_100RB.pbi	86183f185f41b5c6
+71	141	7252334145551801	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+145	897	7252334152790245	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+1	70	7252334254602008	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+72	142	7252334255322664	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+146	886	7252334262444409	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+1	184	7252334315021811	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+186	256	7252334315742464	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+259	993	7252334322814350	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+1	70	7252334474662619	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+72	143	7252334475393285	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+146	884	7252334482492912	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+1	183	7252334535134939	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+186	257	7252334535875613	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+260	1003	7252334543017112	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+0	72	7252334745182348	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+74	146	7252334745933029	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+149	905	7252334753205315	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+5	72	7252336563932120	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+3	75	7252336563952139	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	417fdb2accd03f8f
+6	77	7252336563962153	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/Display_mini.pbi	66f9e951c01f478
+0	172	7252336564933262	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/TIM2_100RB.pbi	86183f185f41b5c6
+174	246	7252336565683944	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+250	1003	7252336572931472	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+0	69	7252339941702585	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	676d1fd156421c34
+71	142	7252339942433249	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a5b4b92169977025
+146	912	7252339949803914	D:/Работа2/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	3acb81cb474b436
+89	185	7264211230000000	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.xcl	fa770aca00f87e63
+84	191	7264211230000000	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.xcl	8613b52f060d4bd
+87	202	7264211230000000	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/Display_mini.xcl	7026ee5b50b47dc9
+91	215	7264211230000000	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/TIM2_100RB.xcl	75def99b36653986
+200	365	7264211239761156	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	49434ada82329a91
+189	398	7264211240091455	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	3c0c21e294ebe993
+213	412	7264211240231588	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/Display_mini.pbi	2c0da38526752ebc
+219	417	7264211240291640	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/TIM2_100RB.pbi	f758c1ce3ed89552
+420	544	7264211241560351	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+548	1596	7264211251671196	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+0	183	7264211354943211	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	3c0c21e294ebe993
+185	265	7264211355773869	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+269	1382	7264211366529071	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+82	523	7264229982042688	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	3c0c21e294ebe993
+525	1275	7264229989567369	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+1279	2566	7264230002054969	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+0	590	7264247619350719	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	3c0c21e294ebe993
+592	1466	7264247628115727	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+1470	3289	7264247643020046	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+1	479	7264250633680455	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	3c0c21e294ebe993
+481	727	7264250636164467	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+730	2018	7264250648617819	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+20	118	7283193972112740	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	49434ada82329a91
+1	121	7283193972112740	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	3c0c21e294ebe993
+123	288	7283193973814281	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+292	1440	7283193984924422	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+1	91	7283194589690298	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	49434ada82329a91
+93	175	7283194590531057	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+178	1278	7283194601151069	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+1	69	7283194853592264	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	49434ada82329a91
+71	147	7283194854383002	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+151	1184	7283194864344759	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+0	95	7283196775596799	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/Display_mini.pbi	2c0da38526752ebc
+97	178	7283196776437561	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+182	1233	7283196786586871	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2
+0	124	7284185240116562	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/Display_mini.pbi	2c0da38526752ebc
+24	146	7284185240346771	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/ENCODER.pbi	49434ada82329a91
+22	149	7284185240376795	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/Application/User/main.pbi	3c0c21e294ebe993
+151	517	7284185244054871	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbd	a686b5e29b8e4899
+521	1734	7284185255810463	D:/Покельс/stm32_progi/IAR/Enkoder/STM32F100 Template/EWARM/STM32F100 Template/BrowseInfo/STM32F100 Template.pbw	8d89b655bdada2b2

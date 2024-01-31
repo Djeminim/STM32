@@ -1,0 +1,71 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\Display_mini.c" -xcl_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.xcl" -macro_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\Display_mini.c" -o "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\Obj\Application\User" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Full.h" -I "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\..\Inc\\" -I "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\..\Src\\" -Ol --predef_macros "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.tmp"
+  rspfile_name = D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.xcl.rsp
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\ENCODER.c" -xcl_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.xcl" -macro_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\ENCODER.c" -o "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\Obj\Application\User" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Full.h" -I "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\..\Inc\\" -I "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\..\Src\\" -Ol --predef_macros "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.tmp"
+  rspfile_name = D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.xcl.rsp
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\main.c" -xcl_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.xcl" -macro_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\main.c" -o "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\Obj\Application\User" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Full.h" -I "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\..\Inc\\" -I "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\..\Src\\" -Ol --predef_macros "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.tmp"
+  rspfile_name = D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.xcl.rsp
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\TIM2_100RB.c" -xcl_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.xcl" -macro_file "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\TIM2_100RB.c" -o "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\Obj\Application\User" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Full.h" -I "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\..\Inc\\" -I "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\..\Src\\" -Ol --predef_macros "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.tmp"
+  rspfile_name = D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.xcl.rsp
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.pbi : INDEXER D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.xcl |  $
+D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\Display_mini.c
+  flags = "-out=D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.pbi" -f "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.xcl"
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.pbi : INDEXER D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.xcl |  $
+D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\ENCODER.c
+  flags = "-out=D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.pbi" -f "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.xcl"
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.pbi : INDEXER D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.xcl |  $
+D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\main.c
+  flags = "-out=D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.pbi" -f "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.xcl"
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.pbi : INDEXER D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.xcl |  $
+D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\Src\TIM2_100RB.c
+  flags = "-out=D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.pbi" -f "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.xcl"
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\STM32F100$ Template.pbw : MAKEBROWSE D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\STM32F100$ Template.pbd
+  flags = "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\STM32F100$ Template.pbd" -output "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\STM32F100$ Template.pbw"
+
+build D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\STM32F100$ Template.pbd : PDBLINK D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.pbi |  $
+D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.pbi $
+D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.pbi $
+D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.pbi
+  flags = -M "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\STM32F100$ Template.pbd" "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\Display_mini.pbi" "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\ENCODER.pbi" "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\main.pbi" "D$:\Покельс\stm32_progi\IAR\Enkoder\STM32F100$ Template\EWARM\STM32F100$ Template\BrowseInfo\Application\User\TIM2_100RB.pbi"
+
