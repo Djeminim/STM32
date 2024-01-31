@@ -8,26 +8,26 @@ unsigned char Send (unsigned char bait)
 	unsigned short Spi2TimeOut = 0;
 	while ((!(SPI2->SR & SPI_SR_TXE)) && (Spi2TimeOut < 1000)) {Spi2TimeOut++;}
 	Spi2TimeOut = 0;
-	SPI2->DR = bait; //Загрузка в др
+	SPI2->DR = bait; //Г‡Г ГЈГ°ГіГ§ГЄГ  Гў Г¤Г°
 	while ((!(SPI2->SR & SPI_SR_RXNE)) && (Spi2TimeOut < 1000)) {Spi2TimeOut++;}
-	return SPI2->DR; //Выгрузка из др (Обязательно нужно делать, для перезарядки)
+	return SPI2->DR; //Р’С‹РіСЂСѓР·РєР° РёР· РґСЂ (РћР±СЏР·Р°С‚РµР»СЊРЅРѕ РЅСѓР¶РЅРѕ РґРµР»Р°С‚СЊ, РґР»СЏ РїРµСЂРµР·Р°СЂСЏРґРєРё)
 }
 
 void Delay_mc (unsigned char Time)
 {
-	unsigned int Taktov = Time * 2178; //2178 - (столько тактов в 1mc)
+	unsigned int Taktov = Time * 2178; //2178 - (Г±ГІГ®Г«ГјГЄГ® ГІГ ГЄГІГ®Гў Гў 1mc)
 	for (Taktov=0; Taktov<Time; Taktov++);
 }
 
-void Data (unsigned char D) //данные для контроллера
+void Data (unsigned char D) //Г¤Г Г­Г­Г»ГҐ Г¤Г«Гї ГЄГ®Г­ГІГ°Г®Г«Г«ГҐГ°Г 
 {
 	GPIOB->ODR &= ~GPIO_ODR_ODR12;
 
-	for (int k=0; k<20;k++); //Порой нужно делать задержку
-                                //Чтобы контроллер диплея успел
-                                //обработать данные
+	for (int k=0; k<20;k++); //РџРѕСЂРѕР№ РЅСѓР¶РЅРѕ РґРµР»Р°С‚СЊ Р·Р°РґРµСЂР¶РєСѓ
+                                //Р§С‚РѕР±С‹ РєРѕРЅС‚СЂРѕР»Р»РµСЂ РґРёРїР»РµСЏ СѓСЃРїРµР»
+                                //РѕР±СЂР°Р±РѕС‚Р°С‚СЊ РґР°РЅРЅС‹Рµ
 
-	Send (0x5F); //код который определяет data это или comand
+	Send (0x5F); //РєРѕРґ РєРѕС‚РѕСЂС‹Р№ РѕРїСЂРµРґРµР»СЏРµС‚ data СЌС‚Рѕ РёР»Рё comand
 	Send ((D)&0x0F);
 	Send (((D&0xF0)>>4)&0x0F);
 
@@ -36,7 +36,7 @@ void Data (unsigned char D) //данные для контроллера
 	for (int k=0; k<20;k++);
 }
 
-void Command (unsigned char C) //Команда для контроллера
+void Command (unsigned char C) //РљРѕРјР°РЅРґР° РґР»СЏ РєРѕРЅС‚СЂРѕР»Р»РµСЂР°
 {
 	GPIOB->ODR &= ~GPIO_ODR_ODR12;
 	for (int k=0; k<20;k++);
@@ -66,71 +66,76 @@ void SPI2_100RB (void)
   GPIOC->CRL &= 0xF0FFFFFF;
   GPIOC->CRL |= 0x03000000; 
   
-  GPIOB->ODR |= GPIO_ODR_ODR12;//Сразу выключаем CS У SPI2
+  GPIOB->ODR |= GPIO_ODR_ODR12;//Г‘Г°Г Г§Гі ГўГ»ГЄГ«ГѕГ·Г ГҐГ¬ CS Г“ SPI2
 
-    // Конфигурируем выводы SPI2 (смотреть в как настроены пины в Prod-t Speci-n 7.1 SPI). ->
-  // PB12, SPI2_NSS: Если мы управляем тогда General purpose output push-pull
+   // РљРѕРЅС„РёРіСѓСЂРёСЂСѓРµРј РІС‹РІРѕРґС‹ SPI2 (СЃРјРѕС‚СЂРµС‚СЊ РІ РєР°Рє РЅР°СЃС‚СЂРѕРµРЅС‹ РїРёРЅС‹ РІ Prod-t Speci-n 7.1 SPI). ->
+  // PB12, SPI2_NSS: Р•СЃР»Рё РјС‹ СѓРїСЂР°РІР»СЏРµРј С‚РѕРіРґР° General purpose output push-pull
   // PB13, SPI2_SCK:(Master) Alternate function push-pull
   // PB14, SPI2_MISO: input, pull up/down
   // PB15, SPI2_MOSI: (Mast	er) Alternate function push-pull
   // PA8 , RESET
   
-  SPI2->CR1 &= ~SPI_CR1_DFF; //передача по 8бит
-  SPI2->CR1 |= SPI_CR1_LSBFIRST; //Формат кадра (LSB первым передается)
-  SPI2->CR1 |= SPI_CR1_SSM; //Сигнал SS может быть получен либо с вывода NSS, либо бита SSI регистра CR1.
+  SPI2->CR1 &= ~SPI_CR1_DFF; //РїРµСЂРµРґР°С‡Р° РїРѕ 8Р±РёС‚
+  SPI2->CR1 |= SPI_CR1_LSBFIRST; //Р¤РѕСЂРјР°С‚ РєР°РґСЂР° (LSB РїРµСЂРІС‹Рј РїРµСЂРµРґР°РµС‚СЃСЏ)
+  SPI2->CR1 |= SPI_CR1_SSM; //РЎРёРіРЅР°Р» SS РјРѕР¶РµС‚ Р±С‹С‚СЊ РїРѕР»СѓС‡РµРЅ Р»РёР±Рѕ СЃ РІС‹РІРѕРґР° NSS, Р»РёР±Рѕ Р±РёС‚Р° SSI СЂРµРіРёСЃС‚СЂР° CR1.
   SPI2->CR1 |= SPI_CR1_SSI;
-  SPI2->CR1 |= SPI_CR1_BR_2 | SPI_CR1_BR_1 | SPI_CR1_BR_0 ; // делитель скорости передачи 256
-  SPI2->CR1 |=SPI_CR1_MSTR; //Ведущий режим
+  SPI2->CR1 |= SPI_CR1_BR_2 | SPI_CR1_BR_1 | SPI_CR1_BR_0 ; // РґРµР»РёС‚РµР»СЊ СЃРєРѕСЂРѕСЃС‚Рё РїРµСЂРµРґР°С‡Рё 256
+  SPI2->CR1 |=SPI_CR1_MSTR; //Р’РµРґСѓС‰РёР№ СЂРµР¶РёРј
+  SPI2->CR1 |=SPI_CR1_MSTR; //Р’РµРґСѓС‰РёР№ СЂРµР¶РёРј
   SPI2->CR1 &= ~SPI_CR1_CPOL & ~SPI_CR1_CPHA;
 
-  SPI2->CR2 |= SPI_CR2_TXDMAEN; //Проверка передачи данных по TX(передача)
-  SPI2->CR2 |= SPI_CR2_RXDMAEN; //Проверка передачи данных по RX(прием)
+  SPI2->CR2 |= SPI_CR2_TXDMAEN; //РџСЂРѕРІРµСЂРєР° РїРµСЂРµРґР°С‡Рё РґР°РЅРЅС‹С… РїРѕ TX(РїРµСЂРµРґР°С‡Р°)
+  SPI2->CR2 |= SPI_CR2_RXDMAEN; //РџСЂРѕРІРµСЂРєР° РїРµСЂРµРґР°С‡Рё РґР°РЅРЅС‹С… РїРѕ RX(РїСЂРёРµРј)
 
-  SPI2->CR1 |= SPI_CR1_SPE; //Вкл. SPI
+
+  SPI2->CR1 |= SPI_CR1_SPE; //Р’РєР». SPI
   
 }
 
 void DMA1C4C5_Init ()
 {
-  //Передача данных по SPI2 от контроллера в переферию (Канал 5)
+   //РџРµСЂРµРґР°С‡Р° РґР°РЅРЅС‹С… РїРѕ SPI2 РѕС‚ РєРѕРЅС‚СЂРѕР»Р»РµСЂР° РІ РїРµСЂРµС„РµСЂРёСЋ (РљР°РЅР°Р» 5)
+
 
   RCC->AHBENR |= RCC_AHBENR_DMA1EN;
 
-  DMA1_Channel5->CCR |= DMA_CCR5_DIR; //чтение с котроллера (памяти)
-  DMA1_Channel5->CCR |= DMA_CCR5_TCIE; //Прерыв при завершении отправки
-  DMA1_Channel5->CCR |= DMA_CCR5_MINC; // Инкремент адреса памяти
+  DMA1_Channel5->CCR |= DMA_CCR5_DIR; //С‡С‚РµРЅРёРµ СЃ РєРѕС‚СЂРѕР»Р»РµСЂР° (РїР°РјСЏС‚Рё)
+  DMA1_Channel5->CCR |= DMA_CCR5_TCIE; //РџСЂРµСЂС‹РІ РїСЂРё Р·Р°РІРµСЂС€РµРЅРёРё РѕС‚РїСЂР°РІРєРё
+  DMA1_Channel5->CCR |= DMA_CCR5_MINC; // РРЅРєСЂРµРјРµРЅС‚ Р°РґСЂРµСЃР° РїР°РјСЏС‚Рё
   
-  DMA1_Channel5->CMAR |= (uint32_t) & Result[0]; //Т.К DIR=1, то берем инфу из CMAR;
-  DMA1_Channel5->CPAR |= (uint32_t) & SPI2->DR; //адрес переферии
+  DMA1_Channel5->CMAR |= (uint32_t) & Result[0]; //Рў.Рљ DIR=1, С‚Рѕ Р±РµСЂРµРј РёРЅС„Сѓ РёР· CMAR;
+  DMA1_Channel5->CPAR |= (uint32_t) & SPI2->DR; //Р°РґСЂРµСЃ РїРµСЂРµС„РµСЂРёРё
 
-  //------------------------------------------------------------
-  //Прием данных по SPI2 (выгрузка информации) (канал 4)
 
-  //DMA1_Channel4->CCR |= DMA_CCR4_CIRC; //Беспрерывная передачи информации
-  DMA1_Channel4->CCR &= ~DMA_CCR4_DIR; //чтение с 0переферии
-  DMA1_Channel4->CCR |= DMA_CCR4_TCIE; //Прерывание по завершению отправки
 
-  DMA1_Channel4->CPAR |= (uint32_t) & SPI2->DR; //Т.К DIR=0,то берем инфу из СPAR 
+ //------------------------------------------------------------
+  //РџСЂРёРµРј РґР°РЅРЅС‹С… РїРѕ SPI2 (РІС‹РіСЂСѓР·РєР° РёРЅС„РѕСЂРјР°С†РёРё) (РєР°РЅР°Р» 4)
+
+  //DMA1_Channel4->CCR |= DMA_CCR4_CIRC; //Р‘РµСЃРїСЂРµСЂС‹РІРЅР°СЏ РїРµСЂРµРґР°С‡Рё РёРЅС„РѕСЂРјР°С†РёРё
+  DMA1_Channel4->CCR &= ~DMA_CCR4_DIR; //С‡С‚РµРЅРёРµ СЃ 0РїРµСЂРµС„РµСЂРёРё
+  DMA1_Channel4->CCR |= DMA_CCR4_TCIE; //РџСЂРµСЂС‹РІР°РЅРёРµ РїРѕ Р·Р°РІРµСЂС€РµРЅРёСЋ РѕС‚РїСЂР°РІРєРё
+
+  DMA1_Channel4->CPAR |= (uint32_t) & SPI2->DR; //Рў.Рљ DIR=0,С‚Рѕ Р±РµСЂРµРј РёРЅС„Сѓ РёР· РЎPAR 
   DMA1_Channel4->CMAR |= (uint32_t) & Vigryzka;
 
 /*
-Настройка количества циклов DMA за 1 прерывание таймера прописывается в ПРЕРЫВАНИИ ТАЙМЕРА!!!
-И ТАМ ЖЕ ВКЛЮЧАЕТСЯ DMA!!!
+РќР°СЃС‚СЂРѕР№РєР° РєРѕР»РёС‡РµСЃС‚РІР° С†РёРєР»РѕРІ DMA Р·Р° 1 РїСЂРµСЂС‹РІР°РЅРёРµ С‚Р°Р№РјРµСЂР° РїСЂРѕРїРёСЃС‹РІР°РµС‚СЃСЏ РІ РџР Р•Р Р«Р’РђРќРР РўРђР™РњР•Р Рђ!!!
+Р РўРђРњ Р–Р• Р’РљР›Р®Р§РђР•РўРЎРЇ DMA!!!
 
-  DMA1_Channel4->CNDTR |= 5; //Число циклов DMA в рамках 1 прерывания таймера
-  DMA1_Channel5->CNDTR |= 5;//Равно размеру массива в котором данные для отправки
+  DMA1_Channel4->CNDTR |= 5; //Р§РёСЃР»Рѕ С†РёРєР»РѕРІ DMA РІ СЂР°РјРєР°С… 1 РїСЂРµСЂС‹РІР°РЅРёСЏ С‚Р°Р№РјРµСЂР°
+  DMA1_Channel5->CNDTR |= 5;//Р Р°РІРЅРѕ СЂР°Р·РјРµСЂСѓ РјР°СЃСЃРёРІР° РІ РєРѕС‚РѕСЂРѕРј РґР°РЅРЅС‹Рµ РґР»СЏ РѕС‚РїСЂР°РІРєРё
 
-  DMA1_Channel4->CCR |= DMA_CCR4_EN;//включение каналов
+  DMA1_Channel4->CCR |= DMA_CCR4_EN;//РІРєР»СЋС‡РµРЅРёРµ РєР°РЅР°Р»РѕРІ
   DMA1_Channel5->CCR |= DMA_CCR5_EN;
  */       
  
-  NVIC_EnableIRQ(DMA1_Channel5_IRQn);//Включение функций прерываний DMA
+  NVIC_EnableIRQ(DMA1_Channel5_IRQn);//Р’РєР»СЋС‡РµРЅРёРµ С„СѓРЅРєС†РёР№ РїСЂРµСЂС‹РІР°РЅРёР№ DMA
   NVIC_EnableIRQ(DMA1_Channel4_IRQn);
 }
 
 void Display()
 {
-  GPIOC->ODR |= GPIO_ODR_ODR6; //PС6=1 (установка RESET в режим ожидания)
+  GPIOC->ODR |= GPIO_ODR_ODR6; //PРЎ6=1 (СѓСЃС‚Р°РЅРѕРІРєР° RESET РІ СЂРµР¶РёРј РѕР¶РёРґР°РЅРёСЏ)
 
   Delay_mc(1);
   Command (0x2A);
@@ -164,12 +169,12 @@ void Display()
   Command (0x01);
   Command (0x80);
   Command (0x0C);
-  Delay_mc(100); //100mc (2 400 000 тактов)
+  Delay_mc(100); //100mc (2 400 000 С‚Р°РєС‚РѕРІ)
 }
 
 void TIM2_IRQHandler (void)
 {
-  Command(0x80); //Перевод коретки дисплея в 0:
+  Command(0x80); //РџРµСЂРµРІРѕРґ РєРѕСЂРµС‚РєРё РґРёСЃРїР»РµСЏ РІ 0:
   Command(0x80);
   
   Result[0] = (0x5F);
@@ -203,27 +208,27 @@ void TIM2_IRQHandler (void)
   
   for (int k=0; k<100;k++);
   
-  GPIOB->ODR &= ~GPIO_ODR_ODR12; //Вкл CS, запуск передачи
+  GPIOB->ODR &= ~GPIO_ODR_ODR12; //Р’РєР» CS, Р·Р°РїСѓСЃРє РїРµСЂРµРґР°С‡Рё
   
-  //(указать расмер массива для переда и принятия данных)
-  DMA1_Channel5->CNDTR |= 21; //Число циклов DMA в рамках 1 прерывания таймера (указать расмер массива)
-  DMA1_Channel4->CNDTR |= 21;//Равно размеру массива в котором данные для отправки
+  //(СѓРєР°Р·Р°С‚СЊ СЂР°СЃРјРµСЂ РјР°СЃСЃРёРІР° РґР»СЏ РїРµСЂРµРґР° Рё РїСЂРёРЅСЏС‚РёСЏ РґР°РЅРЅС‹С…)
+  DMA1_Channel5->CNDTR |= 21; //Р§РёСЃР»Рѕ С†РёРєР»РѕРІ DMA РІ СЂР°РјРєР°С… 1 РїСЂРµСЂС‹РІР°РЅРёСЏ С‚Р°Р№РјРµСЂР° (СѓРєР°Р·Р°С‚СЊ СЂР°СЃРјРµСЂ РјР°СЃСЃРёРІР°)
+  DMA1_Channel4->CNDTR |= 21;//Р Р°РІРЅРѕ СЂР°Р·РјРµСЂСѓ РјР°СЃСЃРёРІР° РІ РєРѕС‚РѕСЂРѕРј РґР°РЅРЅС‹Рµ РґР»СЏ РѕС‚РїСЂР°РІРєРё
 
-  DMA1_Channel5->CCR |= DMA_CCR5_EN;//включение каналов (без ЦИРЦ оно будет выключаться по завершению прерывания
+  DMA1_Channel5->CCR |= DMA_CCR5_EN;//РІРєР»СЋС‡РµРЅРёРµ РєР°РЅР°Р»РѕРІ (Р±РµР· Р¦РР Р¦ РѕРЅРѕ Р±СѓРґРµС‚ РІС‹РєР»СЋС‡Р°С‚СЊСЃСЏ РїРѕ Р·Р°РІРµСЂС€РµРЅРёСЋ РїСЂРµСЂС‹РІР°РЅРёСЏ
   DMA1_Channel4->CCR |= DMA_CCR4_EN;
   
-  TIM2->SR &= ~TIM_SR_UIF; //Перезапуск таймера
+  TIM2->SR &= ~TIM_SR_UIF; //РџРµСЂРµР·Р°РїСѓСЃРє С‚Р°Р№РјРµСЂР°
 }
 
-void DMA1_Channel5_IRQHandler (void) //Проверка готовности SPI принять данные
+void DMA1_Channel5_IRQHandler (void) //РџСЂРѕРІРµСЂРєР° РіРѕС‚РѕРІРЅРѕСЃС‚Рё SPI РїСЂРёРЅСЏС‚СЊ РґР°РЅРЅС‹Рµ
 {
   DMA1_Channel5->CCR &= ~DMA_CCR5_EN;
 
-  while (!(SPI2->SR & SPI_SR_TXE)); //Проверка флага TXE.
+  while (!(SPI2->SR & SPI_SR_TXE)); //РџСЂРѕРІРµСЂРєР° С„Р»Р°РіР° TXE.
   while (SPI2->SR & SPI_SR_BSY); 
   
-  GPIOB->ODR |= GPIO_ODR_ODR12; //выключение CR у SPI по завершению передачи DMA
-  DMA1->IFCR |=DMA_IFCR_CGIF5; //Перезарядка для прерываний DMA(отчистка модуля прерываний TEIE)
+  GPIOB->ODR |= GPIO_ODR_ODR12; //РІС‹РєР»СЋС‡РµРЅРёРµ CR Сѓ SPI РїРѕ Р·Р°РІРµСЂС€РµРЅРёСЋ РїРµСЂРµРґР°С‡Рё DMA
+  DMA1->IFCR |=DMA_IFCR_CGIF5; //РџРµСЂРµР·Р°СЂСЏРґРєР° РґР»СЏ РїСЂРµСЂС‹РІР°РЅРёР№ DMA(РѕС‚С‡РёСЃС‚РєР° РјРѕРґСѓР»СЏ РїСЂРµСЂС‹РІР°РЅРёР№ TEIE)
 }
 
 void DMA1_Channel4_IRQHandler (void)
@@ -231,3 +236,4 @@ void DMA1_Channel4_IRQHandler (void)
   DMA1_Channel4->CCR &= ~DMA_CCR4_EN;
   DMA1->IFCR |=DMA_IFCR_CGIF4;
 }
+
